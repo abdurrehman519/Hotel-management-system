@@ -84,12 +84,15 @@ export const handleMockRequest = async (url, method = 'GET', data = null) => {
   // Auth endpoints
   if (path.includes('/auth/login')) {
     const { email, password } = data || {};
+    const cleanEmail = String(email || '').trim().toLowerCase();
+    const cleanPass = String(password || '').trim();
+
     const valid = [
       { email: 'admin@grandhorizon.com', pass: 'admin123', name: 'System Administrator', role: 'admin' },
       { email: 'manager@grandhorizon.com', pass: 'manager123', name: 'Sarah Mitchell', role: 'manager' },
       { email: 'front@grandhorizon.com', pass: 'front123', name: 'James Carter', role: 'receptionist' },
     ];
-    const match = valid.find(u => u.email === email && u.pass === password);
+    const match = valid.find(u => u.email.toLowerCase() === cleanEmail && u.pass === cleanPass);
     if (!match) {
       const err = new Error('Invalid email or password.');
       err.response = { status: 401, data: { message: 'Invalid email or password.' } };

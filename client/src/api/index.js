@@ -12,12 +12,15 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (res) => res,
   async (err) => {
-    if (err.response?.status === 401 && err.config?.url?.includes('/auth/login')) {
-      return Promise.reject(err);
-    }
+    const isStaticHost =
+      typeof window !== 'undefined' &&
+      (window.location.hostname.includes('github.io') ||
+       !err.response ||
+       err.response.status === 404 ||
+       err.response.status === 405 ||
+       err.code === 'ERR_NETWORK');
 
-    // If running on static host (e.g. GitHub Pages) or backend is offline, fallback to mock DB
-    if (!err.response || err.response.status === 404 || err.code === 'ERR_NETWORK') {
+    if (isStaticHost) {
       try {
         const reqData = typeof err.config?.data === 'string' ? JSON.parse(err.config.data) : err.config?.data;
         return await handleMockRequest(err.config?.url || '', err.config?.method?.toUpperCase() || 'GET', reqData);
@@ -36,6 +39,7 @@ api.interceptors.response.use(
     return Promise.reject(err);
   }
 );
+
 
 
 export const authApi = {
