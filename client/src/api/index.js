@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { handleMockRequest } from './mockData';
 
 const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || '/api' });
 
@@ -10,7 +11,21 @@ api.interceptors.request.use((config) => {
 
 api.interceptors.response.use(
   (res) => res,
-  (err) => {
+  async (err) => {
+    if (err.response?.status === 401 && err.config?.url?.includes('/auth/login')) {
+      return Promise.reject(err);
+    }
+
+    // If running on static host (e.g. GitHub Pages) or backend is offline, fallback to mock DB
+    if (!err.response || err.response.status === 404 || err.code === 'ERR_NETWORK') {
+      try {
+        const reqData = typeof err.config?.data === 'string' ? JSON.parse(err.config.data) : err.config?.data;
+        return await handleMockRequest(err.config?.url || '', err.config?.method?.toUpperCase() || 'GET', reqData);
+      } catch (mockErr) {
+        return Promise.reject(mockErr);
+      }
+    }
+
     if (err.response?.status === 401) {
       localStorage.removeItem('hms_token');
       localStorage.removeItem('hms_user');
@@ -21,6 +36,7 @@ api.interceptors.response.use(
     return Promise.reject(err);
   }
 );
+
 
 export const authApi = {
   login: (data) => api.post('/auth/login', data),
