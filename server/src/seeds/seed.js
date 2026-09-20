@@ -10,7 +10,7 @@ const Invoice = require('../models/Invoice');
 const Payment = require('../models/Payment');
 const AuditLog = require('../models/AuditLog');
 
-async function seed() {
+async function runSeed(exitOnFinish = false) {
   try {
     await initDatabase();
     await sequelize.authenticate();
@@ -77,11 +77,17 @@ async function seed() {
     console.log('  Manager:     manager@grandhorizon.com  /  manager123');
     console.log('  Receptionist: front@grandhorizon.com  /  front123');
 
-    process.exit(0);
+    if (exitOnFinish) process.exit(0);
   } catch (err) {
     console.error('[Seed] Error:', err.message);
-    process.exit(1);
+    if (exitOnFinish) process.exit(1);
+    throw err;
   }
 }
 
-seed();
+if (require.main === module) {
+  runSeed(true);
+}
+
+module.exports = { runSeed };
+

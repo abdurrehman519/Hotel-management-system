@@ -12,6 +12,15 @@ const PORT = process.env.PORT || 5000;
     console.log(`[DB] ${dbType} database connection established.`);
     await sequelize.sync();
     console.log('[DB] Models synchronized.');
+
+    const User = require('./models/User');
+    const userCount = await User.count();
+    if (userCount === 0) {
+      console.log('[DB] No user records found. Auto-seeding initial database data...');
+      const { runSeed } = require('./seeds/seed');
+      await runSeed(false);
+    }
+
     app.listen(PORT, () => {
       console.log(`[Server] Grand Horizon HMS running on port ${PORT}`);
     });
