@@ -501,6 +501,72 @@ export default function Landing() {
         )}
       </Modal>
 
+      {/* Project Team & Work Division Section */}
+      <section style={{ borderTop: '1px solid rgba(255,255,255,0.08)', padding: '60px 48px', background: '#161B22' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ color: '#C9A84C', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '8px' }}>
+            PROJECT CONTRIBUTORS & WORK DIVISION
+          </div>
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '32px' }}>Development Team</h2>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px', textAlign: 'left' }}>
+            {/* Student 1 */}
+            <div className="glass-card" style={{ padding: '24px', background: '#0D1117', border: '1px solid #30363D' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F0F6FC' }}>Mohamed Alhosani</h3>
+                <span style={{ background: 'rgba(201, 168, 76, 0.15)', color: '#E8C96A', padding: '4px 10px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 600 }}>
+                  ID: 1084964
+                </span>
+              </div>
+              <div style={{ color: '#C9A84C', fontSize: '0.85rem', fontWeight: 600, marginBottom: '10px' }}>
+                Lead Frontend & UI/UX Developer
+              </div>
+              <ul style={{ fontSize: '0.85rem', color: '#8B949E', paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li>Designed responsive React 19 UI & landing page layout</li>
+                <li>Created room search, filtering, and reservation modals</li>
+                <li>Implemented dark glassmorphism theme and toast system</li>
+              </ul>
+            </div>
+
+            {/* Student 2 */}
+            <div className="glass-card" style={{ padding: '24px', background: '#0D1117', border: '1px solid #30363D' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F0F6FC' }}>Abdulrahman Alneyadi</h3>
+                <span style={{ background: 'rgba(201, 168, 76, 0.15)', color: '#E8C96A', padding: '4px 10px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 600 }}>
+                  ID: 1086099
+                </span>
+              </div>
+              <div style={{ color: '#C9A84C', fontSize: '0.85rem', fontWeight: 600, marginBottom: '10px' }}>
+                Backend REST API & Database Architect
+              </div>
+              <ul style={{ fontSize: '0.85rem', color: '#8B949E', paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li>Engineered Express.js REST API endpoints (Auth, Rooms, Bookings)</li>
+                <li>Designed Sequelize models & SQLite/MySQL schema architecture</li>
+                <li>Implemented JWT authentication & role-based access security</li>
+              </ul>
+            </div>
+
+            {/* Student 3 */}
+            <div className="glass-card" style={{ padding: '24px', background: '#0D1117', border: '1px solid #30363D' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F0F6FC' }}>Mubarak Salem Alrashdi</h3>
+                <span style={{ background: 'rgba(201, 168, 76, 0.15)', color: '#E8C96A', padding: '4px 10px', borderRadius: '12px', fontSize: '0.8rem', fontWeight: 600 }}>
+                  ID: 1090642
+                </span>
+              </div>
+              <div style={{ color: '#C9A84C', fontSize: '0.85rem', fontWeight: 600, marginBottom: '10px' }}>
+                Full-Stack Integrator, Testing & DevOps
+              </div>
+              <ul style={{ fontSize: '0.85rem', color: '#8B949E', paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <li>Connected React Query state management with backend APIs</li>
+                <li>Conducted end-to-end booking & invoicing workflow testing</li>
+                <li>Configured CI/CD GitHub Actions & GitHub Pages online deployment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer
         style={{
@@ -512,6 +578,9 @@ export default function Landing() {
         }}
       >
         <p>&copy; {new Date().getFullYear()} Grand Horizon Hotel & Resort. All rights reserved.</p>
+        <p style={{ marginTop: '6px', fontSize: '0.8rem', color: '#6E7681' }}>
+          Developed by Mohamed Alhosani (1084964), Abdulrahman Alneyadi (1086099), & Mubarak Salem Alrashdi (1090642)
+        </p>
       </footer>
     </div>
   );

@@ -4,6 +4,16 @@ A modern, full-stack **Hotel Management System** built with **React 19**, **Vite
 
 ---
 
+## 👨‍💻 Project Contributors & Task Division
+
+| Student Name | Student ID | Assigned Role | Main Responsibilities & Contributions |
+|---|---|---|---|
+| **Mohamed Alhosani** | `1084964` | **Lead Frontend & UI/UX Developer** | Responsive React 19 UI, landing page layout, room search & reservation modals, glassmorphism design system. |
+| **Abdulrahman Alneyadi** | `1086099` | **Backend API & Database Architect** | Express.js REST API controllers, Sequelize models, database schema design (SQLite/MySQL), JWT security & authentication. |
+| **Mubarak Salem Alrashdi** | `1090642` | **Full-Stack Integrator & DevOps Engineer** | TanStack Query API integration, end-to-end booking & invoicing workflow testing, CI/CD GitHub Actions & Pages deployment. |
+
+---
+
 ## 🌟 Features
 
 - **Guest Portal & Online Booking**: Public landing page for guests to explore room types, check availability, and place direct bookings.
