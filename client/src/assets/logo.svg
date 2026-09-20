@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF0B9"/>
+      <stop offset="25%" stop-color="#DFB74B"/>
+      <stop offset="50%" stop-color="#C5932B"/>
+      <stop offset="75%" stop-color="#FDF1BA"/>
+      <stop offset="100%" stop-color="#9A6B1F"/>
+    </linearGradient>
+
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5C0"/>
+      <stop offset="50%" stop-color="#D4A73B"/>
+      <stop offset="100%" stop-color="#8C5D17"/>
+    </linearGradient>
+
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#goldGlow)">
+    <!-- Intertwined G & H Luxury Monogram Emblem -->
+    <g transform="translate(180, 40) scale(1.1)">
+      <!-- Left Monogram Curve 'G' -->
+      <path d="M 120 180 C 70 170 30 130 30 80 C 30 30 70 -10 130 -10 C 180 -10 220 20 235 60 C 220 60 200 50 175 45 C 150 40 115 40 90 65 C 70 85 70 115 85 135 C 100 155 130 160 165 155 L 165 110 L 125 110 L 125 90 L 195 90 L 195 165 C 170 175 145 180 120 180 Z" fill="url(#goldGrad)" />
+      
+      <!-- Right Monogram 'H' -->
+      <path d="M 190 -10 L 225 -10 L 225 70 L 295 70 L 295 -10 L 330 -10 L 330 175 L 295 175 L 295 95 L 225 95 L 225 175 L 190 175 Z" fill="url(#goldGrad)" />
+
+      <!-- Sweeping Wave Arcs -->
+      <path d="M 10 160 C 120 100 240 80 440 180 C 320 140 210 125 80 185 Z" fill="url(#goldLight)"/>
+      <path d="M 25 175 C 150 120 270 110 460 200 C 330 160 210 150 95 195 Z" fill="url(#goldGrad)"/>
+
+      <!-- Rising Sun & Rays -->
+      <g transform="translate(320, 20)">
+        <!-- Sun Dome -->
+        <path d="M 30 110 A 55 55 0 0 1 140 110 Z" fill="url(#goldGrad)"/>
+        <!-- Rays -->
+        <path d="M 85 45 L 85 20 M 60 52 L 45 32 M 110 52 L 125 32 M 40 72 L 18 60 M 130 72 L 152 60 M 28 98 L 5 92 M 142 98 L 165 92" stroke="url(#goldGrad)" stroke-width="5" stroke-linecap="round"/>
+        <!-- Sea Ripple Lines -->
+        <path d="M 40 118 L 130 118 M 55 125 L 115 125 M 70 131 L 100 131" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+
+      <!-- Twin Palm Trees -->
+      <g transform="translate(430, 25)">
+        <!-- Left Palm Trunk & Fronds -->
+        <path d="M 40 130 Q 30 80 20 25" stroke="url(#goldGrad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M 20 25 Q 5 15 -15 25 M 20 25 Q -5 -5 10 -20 M 20 25 Q 35 -10 45 10 M 20 25 Q 40 25 50 35" stroke="url(#goldGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
+        
+        <!-- Right Palm Trunk & Fronds -->
+        <path d="M 75 140 Q 70 95 60 45" stroke="url(#goldGrad)" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M 60 45 Q 45 35 30 45 M 60 45 Q 45 20 55 5 M 60 45 Q 75 15 85 30 M 60 45 Q 85 40 95 55" stroke="url(#goldGrad)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+
+    <!-- Main Typography: GRAND HORIZON -->
+    <text x="500" y="360" text-anchor="middle" font-family="'Cinzel', 'Times New Roman', 'Playfair Display', serif" font-size="78" font-weight="700" letter-spacing="6" fill="url(#goldGrad)">
+      GRAND HORIZON
+    </text>
+
+    <!-- Subtitle: LUXURY RESORT & SPA -->
+    <g transform="translate(0, 420)">
+      <!-- Left Rule -->
+      <line x1="80" y1="-12" x2="270" y2="-12" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round"/>
+      
+      <!-- Subtitle Text -->
+      <text x="500" y="0" text-anchor="middle" font-family="'Montserrat', 'Inter', sans-serif" font-size="32" font-weight="500" letter-spacing="14" fill="url(#goldGrad)">
+        LUXURY RESORT &amp; SPA
+      </text>
+
+      <!-- Right Rule -->
+      <line x1="730" y1="-12" x2="920" y2="-12" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
