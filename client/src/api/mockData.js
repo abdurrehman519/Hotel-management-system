@@ -147,28 +147,34 @@ export const handleMockRequest = async (url, method = 'GET', data = null) => {
     return { data: mockDb.staff };
   }
 
-  // Reports
+  // Reports & Dashboard
   if (path.includes('/reports/dashboard') || path.includes('/reports')) {
+    const arrivalsList = [
+      { id: 2, guest: mockDb.guests[1], room: mockDb.rooms[6], check_in_date: todayStr, check_out_date: nextStr, status: 'confirmed' },
+    ];
+    const departuresList = [
+      { id: 1, guest: mockDb.guests[0], room: mockDb.rooms[3], check_in_date: todayStr, check_out_date: nextStr, status: 'checked_in' },
+    ];
+
     return {
       data: {
-        totalRevenue: 2460.00,
-        occupancyRate: 60,
-        availableRooms: 6,
-        occupiedRooms: 3,
-        totalBookings: 12,
-        pendingCheckIns: 2,
-        todayCheckOuts: 1,
-        monthlyRevenue: [
-          { month: 'Jan', revenue: 4200 },
-          { month: 'Feb', revenue: 5800 },
-          { month: 'Mar', revenue: 7100 },
-          { month: 'Apr', revenue: 6400 },
-          { month: 'May', revenue: 8900 },
-          { month: 'Jun', revenue: 9500 },
-        ],
+        rooms: { total: 10, available: 7, occupied: 2, maintenance: 1 },
+        today_arrivals: arrivalsList,
+        today_departures: departuresList,
+        stats: {
+          total_guests: 6,
+          total_bookings: 3,
+          active_bookings: 2,
+          total_revenue: 2840.00,
+        },
+        occupancyRate: 78.5,
+        revenueStats: {
+          currentMonthRevenue: 29800.00,
+        },
       },
     };
   }
+
 
   // Invoices & Payments fallback
   if (path.includes('/invoices') || path.includes('/payments')) {
